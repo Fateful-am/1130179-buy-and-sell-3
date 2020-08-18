@@ -6,7 +6,11 @@ const {
   shuffle,
 } = require(`../../utils`);
 
+const {ExitCode} = require(`../../constants`);
+
 const DEFAULT_COUNT = 1;
+const MAX_COUNT = 1000;
+
 const FILE_NAME = `mocks.json`;
 
 const TITLES = [
@@ -86,6 +90,10 @@ module.exports = {
   run(args) {
     const [count] = args;
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
+    if (countOffer > MAX_COUNT) {
+      console.info(`Не больше ${MAX_COUNT} объявлений`);
+      process.exit(ExitCode.success);
+    }
     const content = JSON.stringify(generateOffers(countOffer));
 
     fs.writeFile(FILE_NAME, content, (err) => {
@@ -96,4 +104,5 @@ module.exports = {
       return console.log(`Operation success. File created.`);
     });
 
-  }}
+  }
+};
