@@ -1,7 +1,7 @@
 # Учебный проект «Куплю. Продам» [![Build status][travis-image]][travis-url]
 
 * Студент: [Алексей Мальцев](https://up.htmlacademy.ru/nodejs/3/user/1130179).
-* Наставник: `Неизвестно`.
+* Наставник: [Константин Серебрянский](https://htmlacademy.ru/profile/id185658).
 
 ---
 
